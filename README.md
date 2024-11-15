@@ -1,2 +1,2 @@
-1. python server.py 
-2. python main.py
+1. python grpc_path/server.py 
+2. python fastapi_path/main.py
