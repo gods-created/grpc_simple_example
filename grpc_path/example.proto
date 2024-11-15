@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+service Library {
+    rpc Book (Request) returns (Reply) {};
+}
+
+message Request {
+    int32 id = 1;
+}
+
+message Reply {
+    SuccessReply success = 1;
+    FailReply fail = 2;
+}
+
+message SuccessReply {
+    string title = 1;
+}
+
+message FailReply {
+    string description = 1;
+}
+
+// python -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. example.proto
